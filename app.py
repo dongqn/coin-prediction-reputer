@@ -15,7 +15,7 @@ TOKEN_NAME = f"{TOKEN}USD"
 URL_QUERY_LATEST_BLOCK="cosmos/base/tendermint/v1beta1/blocks/latest"
 
 API_PORT = int(os.environ.get('API_PORT', 5000))
-ALLORA_VALIDATOR_API_URL = str(os.environ.get('ALLORA_VALIDATOR_API_URL','http://localhost:1317/'))
+ALLORA_VALIDATOR_API_URL = str(os.environ.get('ALLORA_VALIDATOR_API_URL','https://allora-api.testnet.allora.network/'))
 DATABASE_PATH = os.environ.get('DATABASE_PATH', 'prices.db')
 
 BLOCK_TIME_SECONDS = 5
@@ -176,4 +176,3 @@ def get_latest_network_block():
 if __name__ == '__main__':
     init_price_token(TOKEN_NAME, TOKEN_CG_ID, 'usd')
     app.run(host='0.0.0.0', port=API_PORT)
-
